@@ -1,0 +1,93 @@
+/* ================================================================
+   Blood Donor Finder — Global Stylesheet
+   File: assets/css/style.css
+================================================================ */
+
+/* ── CSS Variables ──────────────────────────────────────────── */
+:root {
+    --primary:       #C0392B;
+    --primary-dark:  #922B21;
+    --primary-light: #FADBD8;
+    --success:       #1E8449;
+    --warning:       #D35400;
+    --info:          #2E86C1;
+    --card-shadow:   0 2px 12px rgba(0,0,0,0.08);
+    --radius:        10px;
+}
+
+/* ── Base ────────────────────────────────────────────────── */
+body { font-family: 'Segoe UI', system-ui, sans-serif;
+       background-color: #F8F9FA; color: #212529; }
+
+/* ── Navbar ─────────────────────────────────────────────── */
+.navbar-brand { font-weight: 700; font-size: 1.3rem; }
+.navbar-brand span { color: #FF6B6B; }
+
+/* ── Cards ──────────────────────────────────────────────── */
+.card { border: none; border-radius: var(--radius);
+        box-shadow: var(--card-shadow); transition: box-shadow 0.2s; }
+.card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.13); }
+
+/* ── Dashboard Stat Cards ───────────────────────────────── */
+.stat-card { text-align:center; padding:1.5rem; border-radius:var(--radius); color:white; }
+.stat-card .stat-number { font-size:2.5rem; font-weight:700; }
+.stat-card .stat-label  { font-size:0.85rem; opacity:0.85;
+                          text-transform:uppercase; letter-spacing:0.05em; }
+.stat-red    { background: linear-gradient(135deg,#C0392B,#E74C3C); }
+.stat-blue   { background: linear-gradient(135deg,#1A5276,#2E86C1); }
+.stat-green  { background: linear-gradient(135deg,#145A32,#1E8449); }
+.stat-orange { background: linear-gradient(135deg,#784212,#D35400); }
+
+/* ── Blood Type Badges ──────────────────────────────────── */
+.badge-blood { display:inline-block; padding:4px 10px; border-radius:20px;
+               font-weight:700; font-size:0.85rem;
+               background-color:var(--primary); color:white; }
+
+/* ── Status Badges ──────────────────────────────────────── */
+.badge-open      { background-color:var(--warning); color:white; }
+.badge-fulfilled { background-color:var(--success); color:white; }
+.badge-closed    { background-color:#6C757D;        color:white; }
+.badge-active    { background-color:var(--success); color:white; }
+.badge-inactive  { background-color:#6C757D;        color:white; }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn-primary { background-color:var(--primary); border-color:var(--primary); }
+.btn-primary:hover { background-color:var(--primary-dark);
+                     border-color:var(--primary-dark); }
+.btn-outline-primary { color:var(--primary); border-color:var(--primary); }
+.btn-outline-primary:hover { background-color:var(--primary); color:white; }
+
+/* ── Forms ──────────────────────────────────────────────── */
+.form-control:focus { border-color:var(--primary);
+                      box-shadow:0 0 0 0.2rem rgba(192,57,43,0.2); }
+.form-label { font-weight:600; font-size:0.9rem; }
+.required-star::after { content:' *'; color:var(--primary); }
+
+/* ── Auth Pages ──────────────────────────────────────────── */
+.auth-wrapper { min-height:100vh; display:flex; align-items:center;
+  background:linear-gradient(135deg,#922B21 0%,#C0392B 50%,#E74C3C 100%); }
+.auth-card { max-width:460px; width:100%; margin:auto; }
+
+/* ── Tables ─────────────────────────────────────────────── */
+.table { border-radius:var(--radius); overflow:hidden; }
+.table thead th { background-color:#212529; color:white; border:none; }
+.table tbody tr:hover { background-color:#FFF5F5; }
+
+/* ── Flash Messages ───────────────────────────────────────── */
+.alert { border-radius:var(--radius); border-left:4px solid; }
+.alert-success { border-left-color:var(--success); }
+.alert-danger  { border-left-color:var(--primary); }
+
+/* ── Page Titles ─────────────────────────────────────────── */
+.page-title { font-weight:700; color:#212529;
+              border-left:4px solid var(--primary); padding-left:12px; }
+
+/* ── Availability Toggle ────────────────────────────────── */
+.availability-badge { font-size:1rem; padding:6px 16px; border-radius:20px; }
+.available   { background-color:var(--success); color:white; }
+.unavailable { background-color:#6C757D; color:white; }
+
+/* ── Footer ─────────────────────────────────────────────── */
+footer { background-color:#212529; color:#ADB5BD;
+         padding:1rem 0; margin-top:3rem; font-size:0.85rem; }
+footer a { color:#FF6B6B; text-decoration:none; }
