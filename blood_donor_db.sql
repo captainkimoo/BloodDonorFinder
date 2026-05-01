@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2026 at 08:24 PM
+-- Generation Time: May 01, 2026 at 10:08 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -67,7 +67,8 @@ CREATE TABLE `donors` (
 --
 
 INSERT INTO `donors` (`donor_id`, `user_id`, `blood_type`, `is_available`, `last_donation`, `latitude`, `longitude`, `donation_count`, `notes`) VALUES
-(1, 1, 'O+', 1, NULL, NULL, NULL, 0, NULL);
+(1, 1, 'O+', 1, NULL, NULL, NULL, 0, NULL),
+(5, 7, 'O+', 1, NULL, NULL, NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -107,7 +108,9 @@ CREATE TABLE `profiles` (
 INSERT INTO `profiles` (`profile_id`, `user_id`, `first_name`, `last_name`, `phone`, `city`, `governorate`, `profile_photo`) VALUES
 (1, 1, 'Ahmed', 'Hassan', NULL, 'Cairo', 'Cairo', 'default.jpg'),
 (2, 2, 'Mona', 'Ali', NULL, 'Alexandria', 'Alexandria', 'default.jpg'),
-(3, 3, 'Admin', 'User', NULL, NULL, NULL, 'default.jpg');
+(3, 3, 'Admin', 'User', NULL, NULL, NULL, 'default.jpg'),
+(7, 7, 'Karim', 'AlSayed', '', 'AlSherouq', 'Cairo', 'default.jpg'),
+(8, 8, 'Karim', 'Requester', '', 'Nasr City', 'Cairo', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -178,7 +181,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `email`, `password`, `user_type`, `status`, `is_verified`, `registration_date`, `last_login`) VALUES
 (1, 'donor@bloodfinder.com', '$2y$10$3rM1RWMMKFjRmNQicY87KuSuOsieamZAh4bVayala5IpdSTMaCGwG', 'donor', 'active', 1, '2026-04-05 18:20:10', NULL),
 (2, 'requester@bloodfinder.com', '$2y$10$3rM1RWMMKFjRmNQicY87KuSuOsieamZAh4bVayala5IpdSTMaCGwG', 'requester', 'active', 1, '2026-04-05 18:20:10', NULL),
-(3, 'admin@bloodfinder.com', '$2y$10$PPSDGDJtf/G1kq/DW8/a4./KpTQ.mvykiwieM8UPPv8igHMgAYVae', 'admin', 'active', 1, '2026-04-05 18:20:10', NULL);
+(3, 'admin@bloodfinder.com', '$2y$10$PPSDGDJtf/G1kq/DW8/a4./KpTQ.mvykiwieM8UPPv8igHMgAYVae', 'admin', 'active', 1, '2026-04-05 18:20:10', NULL),
+(7, 'Karim@BDF.com', '$2y$10$Q1hgMNu9E9SDAuI9OSkMzu9EyI0E1.miPCcAGEdpphBM7D9parXDC', 'donor', 'inactive', 0, '2026-04-27 19:40:29', NULL),
+(8, 'Karim@BloodDonorFinder.com', '$2y$10$0Cw6bqe3DWL9tFXWzl4vye/QW57uldpHe/ZLEa.TPBszTBHVy/5hW', 'requester', 'active', 0, '2026-04-27 19:48:09', NULL);
 
 --
 -- Indexes for dumped tables
@@ -252,7 +257,7 @@ ALTER TABLE `blood_requests`
 -- AUTO_INCREMENT for table `donors`
 --
 ALTER TABLE `donors`
-  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `donor_notifications`
@@ -264,7 +269,7 @@ ALTER TABLE `donor_notifications`
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `request_responses`
@@ -282,7 +287,7 @@ ALTER TABLE `subscribers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
